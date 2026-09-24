@@ -1,4 +1,5 @@
 using lesson180926.Abstract;
+using lesson180926.Model;
 using lesson180926.Service;
 
 namespace lesson180926
@@ -8,6 +9,14 @@ namespace lesson180926
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            
+            // Mapper
+            builder.Services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<MappingProfile>();
+                cfg.AddProfile<MappingProfile2>();
+                cfg.AddProfile<MappingProfile3>();
+            });
 
             builder.Services.AddScoped<IStudent, WorkService>();
             builder.Services.AddScoped<ICity, CityService>();
@@ -19,8 +28,7 @@ namespace lesson180926
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
+            
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
