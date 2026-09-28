@@ -100,7 +100,6 @@ namespace lesson180926.Controllers
             
             List<Model6> destinationList = _mapper.Map<List<Model6>>(startList);
             return Ok(destinationList);
-
         }
     }
 }
