@@ -1,6 +1,10 @@
+using Console1.Model;
+
 namespace Console1.Abstract;
 
-public class ICity
+public interface ICity
 {
-    
+    IEnumerable<City> CityGetAll();
+    City GetById(int id);
+    string CityIns(City city);
 }
