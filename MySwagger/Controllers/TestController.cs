@@ -8,7 +8,7 @@ namespace MySwagger.Controllers
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/my_test")]
-    [Tags("Группа 1 (Управление товарами)")]    
+    [Tags("Группа 1 (Управление товарами)")]
     public class TestController : ControllerBase
     {
 

@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_CodeFirst", "EF_CodeFirs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySwagger", "MySwagger\MySwagger.csproj", "{2D28CE76-637C-4FAF-8E13-466E52CBB9E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPagination", "MyPagination\MyPagination.csproj", "{AB978446-F495-42F3-8A35-99BAA967EAAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuth", "BasicAuth\BasicAuth.csproj", "{4BF5FEA8-E607-4350-8E66-8DE05ED1D738}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{2D28CE76-637C-4FAF-8E13-466E52CBB9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D28CE76-637C-4FAF-8E13-466E52CBB9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D28CE76-637C-4FAF-8E13-466E52CBB9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB978446-F495-42F3-8A35-99BAA967EAAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB978446-F495-42F3-8A35-99BAA967EAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB978446-F495-42F3-8A35-99BAA967EAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB978446-F495-42F3-8A35-99BAA967EAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF5FEA8-E607-4350-8E66-8DE05ED1D738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF5FEA8-E607-4350-8E66-8DE05ED1D738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF5FEA8-E607-4350-8E66-8DE05ED1D738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF5FEA8-E607-4350-8E66-8DE05ED1D738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
