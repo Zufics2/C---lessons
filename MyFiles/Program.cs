@@ -1,4 +1,6 @@
+using System.Data;
 using Microsoft.OpenApi;
+using Npgsql;
 
 namespace MyFiles
 {
@@ -8,7 +10,11 @@ namespace MyFiles
         {
             var builder = WebApplication.CreateBuilder(args);
             
-
+            builder.Services.AddScoped<IDbConnection>(_ =>
+                new NpgsqlConnection(
+                    builder.Configuration.GetConnectionString("PostgresConnection")
+                ));
+            
             builder.Services.AddControllers();
             
             builder.Services.AddEndpointsApiExplorer();
