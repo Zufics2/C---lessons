@@ -1,4 +1,5 @@
 using BasicAuth.Handlers;
+using BasicAuth.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.OpenApi.Models;
 
@@ -15,6 +16,8 @@ namespace BasicAuth
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>(
                     "Basic",
                     options => { });
+
+            builder.Services.AddScoped<UserRepository>();
 
             builder.Services.AddAuthorization();
 
