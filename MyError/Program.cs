@@ -2,39 +2,46 @@ using FluentValidation;
 using MyError.Filter;
 using MyError.Model;
 
-namespace MyError;
-
-public class Program
+namespace MyError
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        builder.Services.AddScoped<FluentValidationFilter>();
-
-        builder.Services.AddControllers(options =>
+        public static void Main(string[] args)
         {
-            options.Filters.AddService<FluentValidationFilter>();
-        });
+            var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+            builder.Services.AddScoped<FluentValidationFilter>();
 
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+            builder.Services.AddControllers(options =>
+            {
+                options.Filters.AddService<FluentValidationFilter>();
+            });
 
-        var app = builder.Build();
-        
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            builder.Services.AddProblemDetails();
+            builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
+
+            var app = builder.Build();
+
+            app.UseExceptionHandler();
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseAuthorization();
+
+
+            app.MapControllers();
+
+            app.Run();
         }
-
-        app.UseAuthorization();
-
-
-        app.MapControllers();
-
-        app.Run();
     }
 }
