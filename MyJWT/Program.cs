@@ -1,30 +1,42 @@
-namespace MyJWT;
+using MyJWT.Extensions;
+using MyJWT.Abstract;
+using MyJWT.Services;
 
-public class Program
+namespace MyJWT
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        // Add services to the container.
-
-        builder.Services.AddControllers();
-        // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-        builder.Services.AddOpenApi();
-
-        var app = builder.Build();
-
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+        public static void Main(string[] args)
         {
-            app.MapOpenApi();
+            var builder = WebApplication.CreateBuilder(args);
+            
+
+            builder.Services.AddControllers();
+            object value = builder.Services.AddJwtAuth(builder.Configuration);
+            
+            builder.Services.AddScoped<IUser, UserService>();
+            
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+
+            app.MapControllers();
+
+            app.Run();
         }
-
-        app.UseAuthorization();
-
-
-        app.MapControllers();
-
-        app.Run();
     }
 }
