@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyJWT", "MyJWT\MyJWT.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyXUnit", "MyXUnit\MyXUnit.csproj", "{A6CE833A-FC8C-4CFB-9BDC-56C69D454852}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTest", "MyTest\MyTest.csproj", "{C0FA359A-7A19-4246-A203-677AF572C4CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +68,9 @@ Global
 		{A6CE833A-FC8C-4CFB-9BDC-56C69D454852}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6CE833A-FC8C-4CFB-9BDC-56C69D454852}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6CE833A-FC8C-4CFB-9BDC-56C69D454852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0FA359A-7A19-4246-A203-677AF572C4CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0FA359A-7A19-4246-A203-677AF572C4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0FA359A-7A19-4246-A203-677AF572C4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0FA359A-7A19-4246-A203-677AF572C4CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
